@@ -7,7 +7,11 @@ The QBIC-megSAP-NGS pipeline is a medical genetics pipeline based on best-practi
 
 ### Documentation
 
-The pipeline itself is developed at the [Institute for Medical Genetics](https://github.com/imgag/megSAP) in Tuebingen, Germany. The accompanying scripts within this repository were however written for use at the [QBIC](https://qbic.life) and our local clusters CFC and [BinAC](http://www.zdv.uni-tuebingen.de/dienstleistungen/computing/hardware/binac.html). 
+The pipeline itself is developed at the [Institute for Medical Genetics](https://github.com/imgag/megSAP) in Tuebingen, Germany. The accompanying scripts within this repository were however written for use at the [QBIC](https://qbic.life) and our local clusters CFC and [BinAC](http://www.zdv.uni-tuebingen.de/dienstleistungen/computing/hardware/binac.html).
+
+### Notes
+
+The content of the `megSAP/data` folder is not bundled with this container to keep the actual pipeline separated from the data. In case you want to use this container on your own infrastructure, please download the data / tools yourself, index things using the scripts provided with the pipeline and then manually mount the paths to the respective `data` folder inside this container yourself.  
 
 ### Credits
 
