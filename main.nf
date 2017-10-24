@@ -148,7 +148,7 @@ Run megSAP-analyze.php with selected parameters on input file(s)
 
 
 process qbic_megsap_single_sample_analysis {
-	tag "$name"
+	tag "$params.name"
 	publishDir "${params.out_folder}", mode: 'copy',
       saveAs: {filename -> 
               if(filename.indexOf(".bam") == -1) "$params.out_folder/$filename"
