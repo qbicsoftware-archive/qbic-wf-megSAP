@@ -177,8 +177,7 @@ process qbic_megsap_single_sample_analysis {
 
 	script:
 	"""
-	cat ${system}
-#	php /megSAP/src/Pipelines/analyze.php -folder ${folder_path} -name ${sample_id} -threads ${threads} -steps ${steps} -system ${system}
+  php /megSAP/src/Pipelines/analyze.php -folder ${folder_path} -name ${sample_id} -threads ${threads} -steps ${steps} -system ${system}
 	"""
 
 /*-folder <string>         Analysis data folder.
