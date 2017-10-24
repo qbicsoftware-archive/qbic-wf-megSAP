@@ -161,9 +161,12 @@ process qbic_megsap_single_sample_analysis {
 	//publishDirs etc?
 
   system_ch = Channel.fromPath("${params.system}")
+  folder_ch = Channel.fromPath("${params.folder}")
+
+
 
 	input:
-	val folder_path from params.folder
+	file folder_path from folder_ch
 	val sample_id from params.name
 	val threads from params.threads
 	val steps from params.steps
@@ -175,8 +178,7 @@ process qbic_megsap_single_sample_analysis {
 	script:
 	"""
 	cat ${system}
-	php /megSAP/src/Pipelines/analyze.php -folder ${folder_path} -name ${sample_id} -threads ${threads} -steps ${steps} -system ${system}
-
+#	php /megSAP/src/Pipelines/analyze.php -folder ${folder_path} -name ${sample_id} -threads ${threads} -steps ${steps} -system ${system}
 	"""
 
 /*-folder <string>         Analysis data folder.
