@@ -149,7 +149,6 @@ Run megSAP-analyze.php with selected parameters on input file(s)
 
 process qbic_megsap_single_sample_analysis {
 	tag "$params.name"
-  beforeScript 'module load qbic/singularity/2.4'
 
 	publishDir "${params.out_folder}", mode: 'copy',
       saveAs: {filename -> 
