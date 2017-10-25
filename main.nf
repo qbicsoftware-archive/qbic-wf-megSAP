@@ -142,14 +142,29 @@ log.info summary.collect { k,v -> "${k.padRight(15)}: $v" }.join("\n")
 log.info "========================================="
 
 
+
+
+
+/*
+Process input FastQ files in a way that the pipeline can read them
+*/
+
+process qbic_prepare_data_for_megSAP {
+  tag $params.name
+  
+}
+
+
+
+
 /*
 Run megSAP-analyze.php with selected parameters on input file(s)
 */
 
 
+
 process qbic_megsap_single_sample_analysis {
 	tag "$params.name"
-  //  beforeScript 'module load qbic/singularity/2.4'
 	publishDir "${params.out_folder}", mode: 'copy',
       saveAs: {filename -> 
               if(filename.indexOf(".bam") == -1) "$params.out_folder/$filename"
