@@ -149,11 +149,12 @@ log.info "========================================="
 Process input FastQ files in a way that the pipeline can read them
 */
 
-process qbic_prepare_data_for_megSAP {
+/*process qbic_prepare_data_for_megSAP {
   tag $params.name
-  
+
 }
 
+*/
 
 
 
